@@ -1,81 +1,77 @@
-*{
-    margin: 0;
-    padding: 0;
-    text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  text-align: center;
 }
-h1{
-    background-color:  rgb(8, 8, 43);
-    height: 5rem;
-    line-height: 5rem;
-    color: antiquewhite;
-    
+
+h1 {
+  background-color: rgb(8, 8, 43);
+  height: 5rem;
+  line-height: 5rem;
+  color: antiquewhite;
 }
 
 .choice {
-    height: 160px;
-    width: 160px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
+  height: 160px;
+  width: 160px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .choice:hover {
-    opacity:0.7;
-    cursor: pointer;
-    background-color: black;
+  opacity: 0.7;
+  cursor: pointer;
+  background-color: black;
 }
 
-img{
-    height: 150px;
-    width: 150px;
-    object-fit: cover;
-    border-radius: 50%;
-    
+img {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
-
-.choices{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5rem;
-    margin-top: 5rem;
-    margin-bottom: 5rem;
+.choices {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
 }
 
 .score-board {
-    display: flex;
-    justify-content: center;
-    margin-top: 5rem;
-    margin-bottom: 5rem;
-    gap: 5rem;
-    align-items: center ;
-    
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  gap: 5rem;
+  align-items: center;
 }
 
-#user-score, #comp-score {
-    font-size: 3rem;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+#user-score,
+#comp-score {
+  font-size: 3rem;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
 p {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 2rem;
-    justify-content: center;
-    align-items: center;
-
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 2rem;
+  justify-content: center;
+  align-items: center;
 }
 
 #msg {
-    font-size: 2rem;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    display: inline;
-    background-color: rgb(8, 8, 43);
-    color: antiquewhite;
-    padding: 2rem;
-    border-radius: 1rem ;
+  font-size: 2rem;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  display: inline;
+  background-color: rgb(8, 8, 43);
+  color: antiquewhite;
+  padding: 2rem;
+  border-radius: 1rem;
 }
 
 #btn {
@@ -89,18 +85,85 @@ p {
   font-weight: bold;
   text-align: center;
   text-decoration: none;
-  border: 2px solid rgb(41, 13, 67); 
-  color: #ffffff; /* White text */
+  border: 2px solid rgb(41, 13, 67);
+  color: #ffffff; 
   cursor: pointer;
-  border-radius: 6px; /* Rounded corners */
-  transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Smooth transition */
+  border-radius: 6px; 
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s; 
+}
+
+.msg-container {
+  margin-bottom: 65px;
+  padding: 5px;
 }
 
 
+@media only screen and (max-width: 768px) {
+  .choices {
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 3rem; 
+    margin-bottom: 3rem; 
+  }
 
-.msg-container {
-    margin-bottom: 65px;
-    padding: 5px;
-    
+  .choice {
+    height: 120px;
+    width: 120px;
+  }
 
+  img {
+    height: 100px;
+    width: 100px;
+  }
+
+  .score-board {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  #user-score,
+  #comp-score,
+  p {
+    font-size: 1.5rem; 
+  }
+}
+
+
+@media only screen and (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+    height: 3rem;
+    line-height: 3rem;
+  }
+
+  .choice {
+    height: 80px;
+    width: 80px;
+  }
+
+  img {
+    height: 70px;
+    width: 70px;
+  }
+
+  .score-board {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  #user-score,
+  #comp-score,
+  p {
+    font-size: 1.2rem; 
+  }
+
+  #msg {
+    font-size: 1.2rem;
+    padding: 1rem;
+  }
+
+  #btn {
+    font-size: 14px;
+    padding: 10px 10px;
+  }
 }
