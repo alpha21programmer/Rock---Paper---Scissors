@@ -3,25 +3,32 @@ let compScore = 0;
 
 
 const drawGame = () => {
-    console.log("It was Draw.");
+    console.log("It was Draw.Play again.");
     msg.innerText = "It was Draw . Play again.";
     msg.style.backgroundColor = " rgb(8, 8, 43)";
 };
 
-const showWinner = (userWin) => {
+const showWinner = (userWin, userChoice, compChoice) => {
    if (userWin){
-    console.log ("You win !")
-    msg.innerText = "You win !";
+    userScore++;
+    userScores.innerText = userScore;
+    console.log (`You win !`)
+    msg.innerText = `You win ! Your ${userChoice} beats Comp ${compChoice}`;
     msg.style.backgroundColor = "green";
    } else {
+    compScore++;
+    compScores.innerText = compScore;  
     console.log ("You lose !")
-    msg.innerText = "You lose !";
+    msg.innerText = `You lose !     Comp ${compChoice} beats Your ${userChoice}`;
     msg.style.backgroundColor = "red";
    }
 };
 
 const choices = document.querySelectorAll(".choice");
-const msg = document.querySelector("#msg")
+const msg = document.querySelector("#msg");
+const userScores = document.querySelector("#user-score");
+const compScores = document.querySelector("#comp-score");
+const resetBtn = document.querySelector("#btn");
 
 const genCompChoice = () => {
     const gameOptions = ["rock", "paper", "scissors"];
@@ -29,6 +36,15 @@ const genCompChoice = () => {
     return gameOptions[randomIdx];
 
 };
+
+resetBtn.addEventListener("click", () => {
+   userScore = 0;
+   compScore = 0;
+   document.getElementById("user-score").textContent = userScore;
+   document.getElementById("comp-score").textContent = compScore;
+   msg.innerText = "Play your move!";
+   msg.style.backgroundColor = " rgb(8, 8, 43)";
+  });
 
 const playGame = (userChoice) => {
     console.log("choice of user = ", userChoice);
@@ -49,7 +65,7 @@ const playGame = (userChoice) => {
             //rock, paper
             userWin = compChoice === "rock" ? false : true;
         }
-        showWinner(userWin);
+        showWinner(userWin, userChoice, compChoice);
 
     }
 };

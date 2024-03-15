@@ -77,3 +77,30 @@ p {
     padding: 2rem;
     border-radius: 1rem ;
 }
+
+#btn {
+  margin: 0 auto;
+  display: block;
+  background-color: rgb(8, 8, 43);
+  color: aliceblue;
+  display: inline-block;
+  padding: 15px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid rgb(41, 13, 67); 
+  color: #ffffff; /* White text */
+  cursor: pointer;
+  border-radius: 6px; /* Rounded corners */
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Smooth transition */
+}
+
+
+
+.msg-container {
+    margin-bottom: 65px;
+    padding: 5px;
+    
+
+}
